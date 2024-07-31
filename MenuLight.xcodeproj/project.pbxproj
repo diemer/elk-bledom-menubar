@@ -11,6 +11,9 @@
 		0C0AB75E2C595E5400A8D2F7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AB75D2C595E5400A8D2F7 /* ContentView.swift */; };
 		0C0AB7602C595E5500A8D2F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0AB75F2C595E5500A8D2F7 /* Assets.xcassets */; };
 		0C0AB7632C595E5500A8D2F7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C0AB7622C595E5500A8D2F7 /* Preview Assets.xcassets */; };
+		0C0AB76B2C595F8B00A8D2F7 /* BLEManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AB76A2C595F8B00A8D2F7 /* BLEManager.swift */; };
+		0C0AB76D2C595FC400A8D2F7 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0AB76C2C595FC400A8D2F7 /* Extensions.swift */; };
+		0C0AB76F2C5964AD00A8D2F7 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0C0AB76E2C5964AD00A8D2F7 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +23,9 @@
 		0C0AB75F2C595E5500A8D2F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0C0AB7622C595E5500A8D2F7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0C0AB7642C595E5500A8D2F7 /* MenuLight.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MenuLight.entitlements; sourceTree = "<group>"; };
+		0C0AB76A2C595F8B00A8D2F7 /* BLEManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEManager.swift; sourceTree = "<group>"; };
+		0C0AB76C2C595FC400A8D2F7 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0C0AB76E2C5964AD00A8D2F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,6 +42,7 @@
 		0C0AB74F2C595E5400A8D2F7 = {
 			isa = PBXGroup;
 			children = (
+				0C0AB76E2C5964AD00A8D2F7 /* Info.plist */,
 				0C0AB75A2C595E5400A8D2F7 /* MenuLight */,
 				0C0AB7592C595E5400A8D2F7 /* Products */,
 			);
@@ -57,6 +64,8 @@
 				0C0AB75F2C595E5500A8D2F7 /* Assets.xcassets */,
 				0C0AB7642C595E5500A8D2F7 /* MenuLight.entitlements */,
 				0C0AB7612C595E5500A8D2F7 /* Preview Content */,
+				0C0AB76A2C595F8B00A8D2F7 /* BLEManager.swift */,
+				0C0AB76C2C595FC400A8D2F7 /* Extensions.swift */,
 			);
 			path = MenuLight;
 			sourceTree = "<group>";
@@ -129,6 +138,7 @@
 			files = (
 				0C0AB7632C595E5500A8D2F7 /* Preview Assets.xcassets in Resources */,
 				0C0AB7602C595E5500A8D2F7 /* Assets.xcassets in Resources */,
+				0C0AB76F2C5964AD00A8D2F7 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +150,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0C0AB75E2C595E5400A8D2F7 /* ContentView.swift in Sources */,
+				0C0AB76B2C595F8B00A8D2F7 /* BLEManager.swift in Sources */,
 				0C0AB75C2C595E5400A8D2F7 /* MenuLightApp.swift in Sources */,
+				0C0AB76D2C595FC400A8D2F7 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +291,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need access to Bluetooth to connect to your LED light.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We need access to Bluetooth peripherals to control the LED light.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -306,6 +321,9 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need access to Bluetooth to connect to your LED light.";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "We need access to Bluetooth peripherals to control the LED light.";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

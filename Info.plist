@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>We need access to Bluetooth peripherals to control the LED light.</string>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>We need access to Bluetooth to connect to your LED light.</string>
+</dict>
+</plist>

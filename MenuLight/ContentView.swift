@@ -11,10 +11,11 @@ struct ContentView: View {
     @StateObject private var bleManager = BLEManager()
     @State private var isOn = UserDefaults.standard.bool(forKey: "isOn")
     @State private var selectedColor: Color = Color(hex: UserDefaults.standard.string(forKey: "selectedColor") ?? "FFFFFF")
+  @State private var brightness: Double = UserDefaults.standard.double(forKey: "brightness") ?? 255
 
     var body: some View {
-        VStack {
-          Toggle("LED Power", isOn: $isOn)
+      VStack(alignment: .trailing) {
+          Toggle("Power", isOn: $isOn)
             .toggleStyle(.switch)
             .onChange(of: isOn) { value in
                 UserDefaults.standard.setValue(value, forKey: "isOn")
@@ -24,8 +25,19 @@ struct ContentView: View {
                     bleManager.turnOff()
                 }
             }
-          
-          
+          Slider(value: $brightness, in: 0 ... 255, step: 25.5) {
+            Text("Brightness")
+          } minimumValueLabel: {
+            Text("Min")
+          } maximumValueLabel: {
+            Text("Max")
+          }
+            .onChange(of: brightness) {
+              UserDefaults.standard.setValue($0, forKey: "brightness")
+              if isOn {
+                bleManager.setBrightness(Int(brightness))
+              }
+            }
 
             ColorPicker("Select Color", selection: $selectedColor)
                 .onChange(of: selectedColor) { newColor in
@@ -34,7 +46,7 @@ struct ContentView: View {
                         bleManager.setColor(colorToHex(color: newColor))
                     }
                 }
-          
+        Spacer().frame(height: 50)
           Button("Quit") {
             NSApplication.shared.terminate(self)
           }

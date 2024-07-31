@@ -89,6 +89,13 @@ class BLEManager: NSObject, ObservableObject, CBCentralManagerDelegate, CBPeriph
     peripheral.writeValue(data, for: ledCharacteristic, type: .withoutResponse)
   }
   
+  func setBrightness(_ brightness: Int) {
+    guard let peripheral = peripheral, let ledCharacteristic = ledCharacteristic else { return }
+    let hexValue = String(format:"%02X", brightness)
+    let data = Data(hex:"7e0001\(hexValue)00000000ef")
+    peripheral.writeValue(data, for: ledCharacteristic, type: .withoutResponse)
+  }
+  
   func setColor(_ color: String) {
     guard let peripheral = peripheral, let ledCharacteristic = ledCharacteristic else { return }
     let data = Data(hex: color)
